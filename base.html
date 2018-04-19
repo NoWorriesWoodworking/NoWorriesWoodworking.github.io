@@ -1,11 +1,570 @@
-<html>
-  <body style="height:100%; width:100%">
-    <div id="header" style="background-color:red; position:absolute; top:0px; left:0px; height:25vh; right:0px;overflow:hidden;"> 
-    </div> 
-    <div id="content" style="background-color:white; position:absolute;height:50vh; top:0px; bottom:0%; left:0px; right:0px; overflow:auto;"> 
-      <h1>HELLO</h1>
-    </div> 
-    <div id="footer" style="background-color:blue; position:absolute; bottom:0px; height:25vh; left:0px; right:0px; overflow:hidden;"> 
-    </div>
-  </body>
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- ============================= Head: meta, link, title, css, js, etc =========================================================================== -->
+	<head>
+	    <meta charse="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable = yes">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<style>
+			body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			height: 100%;
+			max-height: 100%;
+			font-family:Sans-serif;
+			line-height: 1.5em;
+			transition: background-color .5s;
+			}
+
+			main {
+				position: fixed;
+				top: 87px; /* Set this to the height of the header */
+				bottom: 70px; /* Set this to the height of the footer */
+				left: 200px;
+				right: 200px;
+				overflow: auto;
+				background: #fff;
+			}
+
+			hr {
+				color: black;
+				display: block;
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+				margin-left: auto;
+				margin-right: auto;
+				border-style: inset;
+				border-width: 10px;
+			}
+
+			hr.ones {
+					color: black;
+					display: block;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					margin-left: auto;
+					margin-right: auto;
+					border-style: inset;
+					border-width: 10px;
+			}
+
+			div.twos {
+					max-width: 750px;
+					min-height: 325px;
+					border: 5px solid  white;
+					padding-top: 20px;
+					padding-right: 20px;
+					padding-bottom: 20px;
+					padding-left: 20px;
+				}
+
+			span.twos {
+			padding: 20px;
+			border: 5px solid  white;
+			display: inline-block;
+			}
+
+			div.ones{
+			background-color: #8392f6;
+			min-height: 800px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.profile_bg{
+			background-color: black;
+			background-image: url("profile/backgrounds/profile_bg.jpg");
+			min-height: 800px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.send_msg{
+			background-color: #8392f6;
+			min-height: 500px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.uploads_photo{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/upload_profile_bg.jpg");
+			min-height: 370px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.uploads_file{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/upload_file_bg.jpg");
+			min-height: 370px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.download{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/dwn.jpg");
+			overflow-x: hidden;
+			min-height: 370px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.index{
+			background-color: #8392f6;
+			background-image: url("index_bg.jpg");
+			overflow-x: hidden;
+			min-height: 370px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.download_key{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/download_key.jpg");
+			padding: 20px;
+			overflow-x: hidden;
+			min-height: 370px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.send_msg_bg{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/mess.jpg");
+			min-height: 500px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.send_msg_bg2{
+			background-color: #8392f6;
+			background-image: url("profile/backgrounds/received.jpg");
+			min-height: 500px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.group_information{
+			background-color: white;
+			/*background-image: url("profile/backgrounds/group_information_bg.jpg");*/
+			min-height: 500px;
+			border-width:5px;
+			border-style:groove;
+			}
+
+			div.ones_twos{
+			background-color: white;
+			min-height: 300px;
+			}
+
+			div.grp_photo{
+				min-height: 300px;
+				max-width: 300px;
+			}
+			div.grp_text{
+				min-height: 300px;
+				max-width: 300px;
+			}
+
+			div.grp{
+				border-width: 25px;
+			}
+
+			#header {
+				color: white;
+			/*    height: 100px;    */
+				background-image: url("webpages/header/headerr.jpg");
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				overflow: hidden;
+
+			}
+
+			#footer {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 70px;
+				overflow: hidden; /* Disables scrollbars on the footer frame. To enable scrollbars, change "hidden" to "scroll" */
+
+			}
+
+			#left {
+				position: absolute;
+				top: 87px; /* Set this to the height of the header */
+				bottom: 0px; /* Set this to the height of the footer */
+				left: 0;
+				width: 200px;
+				overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+
+			}
+
+			#right {
+				position: absolute;
+				top: 87px; /* Set this to the height of the header */
+				bottom: 0px; /* Set this to the height of the footer */
+				right: 0;
+				width: 200px;
+				overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+
+			}
+
+			.innertube {
+				margin: 15px; /* Provides padding for the content */
+			}
+
+
+
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav ul a {
+				color: gray;
+				text-decoration: none;
+			}
+
+			/*IE6 fix*/
+			* html body{
+				padding: 87px 200px 70px 200px;
+				/* 1 height of the header
+				   2 width of the right column
+				   3 height of the footer
+				   4 width of the left column */
+			}
+
+			* html main{
+				height: 100%;
+				width: 100%;
+			}
+
+
+	.sidenav {
+		height: 100%; /* 100% Full-height */
+		width: 0; /* 0 width - change this with JavaScript */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Stay on top */
+		top: 0;
+		left: 0;
+		background-color: #111; /* Black*/
+		background-image: url("profile/backgrounds/sidebar.jpg");
+		overflow-x: hidden; /* Disable horizontal scroll */
+		padding-top: 60px; /* Place content 60px from the top */
+		transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: white;
+		display: block;
+		transition: 0.3s
+	}
+
+	.sidenav a:hover, .offcanvas a:focus{
+		color: #f1f1f1;
+	}
+
+
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+
+	#main {
+		transition: margin-left .5s;
+		padding: 20px;
+	}
+
+
+	@media screen and (max-height: 450px) {
+	  .sidenav {padding-top: 15px;}
+	  .sidenav a {font-size: 18px;}
+	}
+		</style>
+		<title>No Worries Wood Working</title>
+	</head>
+
+<!-- ============================= Head: meta, link, title, css, js, etc =========================================================================== -->
+	<body>
+
+		<header id="header">
+			<div class="innertube">
+			    <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                    <img style="max-width: 175px; max-height: 45px; margin-top: -10px; " src="{{url_for('static', filename='webpages/header/meraki.jpg') }}">
+                    </a>
+                </div>
+
+<!-- ============================= Buttons beside Meraki image =========================================================================== -->
+<!-- ============================= IF LOGGED IN =========================================================================== -->
+                <div class="container-fluid">
+                    {% if session.logged_in %}
+
+                        <a href="/group_information/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-king" aria-hidden="true"></span> &nbsp;&nbsp;Meraki's Group Information</button></a>
+
+                        <a href="/dashboard/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</button></a>
+
+                        <a href="/send_to/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Messages ( {{number_of_messages}} )</button></a>
+
+                        <a href="/uploads/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> &nbsp;&nbsp;Uploads (  )</button></a>
+
+                        <a href="/downloads/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-download" aria-hidden="true"></span> &nbsp;&nbsp;Downloads ( {{number_of_downloads}} )</button></a>
+
+<!-- ============================= If Not logged in =========================================================================== -->
+                    {% else %}
+
+                        <a href="/group_information/"><button type="button" class="btn btn-primary" aria-label="Left Align"
+                                                        style="margin-top: 5px;
+                                                        margin-bottom: 5px;
+                                                        height: 44px;
+                                                        margin-right: 15px;">
+                            <span class="glyphicon glyphicon-king" aria-hidden="true"></span> &nbsp;&nbsp;Meraki's Group Information</button></a>
+
+                    {% endif %}
+
+
+
+<!-- ============================= Links to the Top Right ============================================================================ -->
+
+                    <ul class="nav navbar-nav navbar-right" style="color:white;">
+						<div style="color:white; margin-right: 10px; margin-left: 15px;"  class="container-fluid">
+							<h5>
+
+<!-- ============================= If Logged in ======================================================================================= -->
+							    {% if session.logged_in %}
+
+							        <p><span style="color: #1fff00; margin-left: 2px;" class="glyphicon glyphicon-user" aria-hidden="true"></span> Hello, {{ un }}</p>
+							        <a href="/support-donate/" style="color:white;" ><span style="color:  #ff0000;" class="glyphicon glyphicon-heart"></span> Support &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/logout/" style="color:white;"><span style="color:  #bef1ff;" class="glyphicon glyphicon-log-in"></span> Logout &nbsp;&nbsp;&nbsp;</a>
+
+<!-- ============================= If Logged out ======================================================================================= -->
+							    {% else %}
+
+							        <p><span style="color: red; margin-left: 2px;"  class="glyphicon glyphicon-user" aria-hidden="true"></span> Hello, Guest</p>
+    								<a href="/support-donate/" style="color:white;"> <span style="color:  #ff0000;" class="glyphicon glyphicon-heart"></span> Support &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/login/" style="color:white;"><span  style="color:  #bef1ff;" class="glyphicon glyphicon-log-in"></span> Login &nbsp;&nbsp;&nbsp;</a>
+    								<a href="/register/" style="color:white;"><span  style="color:  #bef1ff;" class="glyphicon glyphicon-pencil"></span> Register</a>
+
+    							{% endif %}
+							</h5>
+						</div>
+        			</ul>
+        		</div>
+			</div>
+		</header>
+
+
+
+
+<!-- ============================= Begining of the MAIN ======================================================================================= -->
+		<main>
+			<div class="innertube">
+				<div class="container-fluid">
+
+<!-- ============================= Flash Messages Area ======================================================================================= -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-info alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span bottom-margin="15px" aria-hidden="true">X</span></button>
+
+                                    {{message}}
+
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+
+
+
+<!-- ============================= Extended Area ======================================================================================= -->
+                    <div id="james" style="background-color: white; margin: auto;">
+
+                        {% block body %}
+
+                            <!--    This is where your code will go    -->
+                            <!--    The code that will extend this file    -->
+
+                        {% endblock %}
+
+                    </div>
+                </div>
+			</div>
+		</main>
+
+
+
+
+<!-- ============================= Left Column : Navigation bar  ======================================================================================= -->
+		<nav id="left" class="bg-primary">
+			<div class="innertube">
+
+				<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+                <script type="text/javascript" src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+				<div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <br><br>
+                <a class="navbar-brand" href="/">
+                    <img style="max-width: 175px; margin-top: -10px; " src="{{url_for('static', filename='webpages/header/meraki.jpg') }}">
+                </a>
+                <br><br><br>
+                <a href="/login/"><small>Login</small></a>
+                <a href="/register/"><small>Register</small></a>
+                <hr>
+                	<h1 style="color: white;">&nbsp;AngularJS</h1>
+                        {% for ang in page_dict["AngularJS"] %}
+
+                		        <a href="{{ang[1]}}">{{ang[0]}}</a>
+
+                		{% endfor %}
+                <hr>
+                	<h1 style="color: white;">&nbsp;C&#43;&#43;</h1>
+                        {% for c in page_dict["C_PlusPlus"] %}
+
+                		        <a href="{{c[1]}}">{{c[0]}}</a>
+
+                		{% endfor %}
+                <hr>
+                    <h1 style="color: white;">&nbsp;C&#35;</h1>
+                        {% for d in page_dict["C_Sharp"] %}
+
+                		        <a href="{{d[1]}}">{{d[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;HTML</h1>
+                        {% for h in page_dict["HTML"] %}
+
+                		        <a href="{{h[1]}}">{{h[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;Java</h1>
+                        {% for j in page_dict["Java"] %}
+
+                		        <a href="{{j[1]}}">{{j[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;Javascipt</h1>
+                        {% for js in page_dict["Javascript"] %}
+
+                		        <a href="{{js[1]}}">{{js[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+                	<h1 style="color: white;">&nbsp;Python</h1>
+                        {% for p in page_dict["Python"] %}
+
+                		        <a href="{{p[1]}}">{{p[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <h1 style="color: white;">&nbsp;SQL</h1>
+                        {% for s in page_dict["SQL"] %}
+
+                		        <a href="{{s[1]}}">{{s[0]}}</a>
+
+                		{% endfor %}
+
+                <hr>
+
+                    <br><br><br>
+                    <a href="/tos/"><h6 style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Terms Of Service</h6></a>
+                	<br><br><br>
+                </div>
+
+                <div id="nav" style="float: left;">
+                    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&nbsp;&nbsp;&nbsp;&nbsp;&#9776; Navigation&nbsp;&nbsp;</span>
+                </div>
+
+			</div>
+		</nav>
+
+
+
+
+<!-- ============================= Right Side  ======================================================================================= -->
+		<div id="right" class="bg-primary">
+			<div class="innertube">
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+<!-- ============================= Footer  ======================================================================================= -->
+		<footer id="footer">
+            <div class="innertube">
+				<small><h6 align="center"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>--2018--</h6></small>
+				<small><p align="center"><a href="/tos/"><h6 align="center" style="color: white;">Terms Of Service</h6></a></p></small>
+			</div>
+
+		</footer>
+
+
+
+
+<!-- ============================= CLOSE body and html tags  ======================================================================================= -->
+	</body>
+</html>
