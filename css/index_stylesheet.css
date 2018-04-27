@@ -10,15 +10,12 @@ html {
 }
 
 .containerr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
-button {
+.button {
   position: absolute;
   top: 50%;
-  text-align: center;
   display: inline-block;
   border-radius: 20px;
   background-color: green;
