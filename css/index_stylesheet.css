@@ -4,18 +4,27 @@ body {
   background-attachment: fixed;
   background-position: center;
   color: white;
+  background-color: black;
 }
 html {
   height: 100%;
 }
 
-.containerr {
-  text-align: center;
+.popup{
+  position:fixed;
+  left:50%;
+
+}
+.popup .wrapper{
+  position:relative;
+  left:-50%;
+  top:50vh;
 }
 
 .button {
   position: absolute;
   top: 50%;
+  text-align: center;
   display: inline-block;
   border-radius: 20px;
   background-color: green;
