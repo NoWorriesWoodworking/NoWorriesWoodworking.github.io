@@ -20,7 +20,6 @@ html {
 }
 
 .button {
-  position: absolute;
   text-align: center;
   display: inline-block;
   border-radius: 20px;
