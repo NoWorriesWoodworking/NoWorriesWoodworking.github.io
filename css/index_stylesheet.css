@@ -11,11 +11,11 @@ html {
 }
 .popup{
   position:fixed;
-  left:40%;
+  left:45%;
 }
 .popup .wrapperr{
   position:relative;
-  left:-40%;
+  left:-45%;
   top:50vh;
 }
 
