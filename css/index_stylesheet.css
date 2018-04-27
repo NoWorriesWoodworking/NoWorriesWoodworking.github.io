@@ -11,9 +11,9 @@ html {
 }
 .popup{
   position:fixed;
-  left:50%;  
+  left:50%;
 }
-.popup .wrapper{
+.popup .wrapperr{
   position:relative;
   left:-50%;
   top:50vh;
