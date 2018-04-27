@@ -63,10 +63,3 @@ html {
   height: 100px;
   color: white;
   }
-
-  #btn {
-    position: absolute;
-    bottom: 150px;
-    height: 200px;
-    width: 50%;
-  }
