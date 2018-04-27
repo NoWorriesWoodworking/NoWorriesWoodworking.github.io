@@ -21,7 +21,7 @@ h1{
 .popup .wrapperr{
   position:relative;
   left:-50%;
-  top:50vh;
+  bottom:50%;
 }
 
 .button {
