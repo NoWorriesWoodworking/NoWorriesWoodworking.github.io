@@ -9,6 +9,12 @@ html {
   height: 100%;
 }
 
+.containerr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   position: absolute;
   top: 50%;
