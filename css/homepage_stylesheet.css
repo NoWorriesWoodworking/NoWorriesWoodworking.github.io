@@ -71,6 +71,7 @@ main {
 		overflow: auto;
 		background: white;
 		box-shadow: 5px 5px 5px rgba(85, 85, 85, 0.5);
+    padding: 5%;
 
 	}
 
