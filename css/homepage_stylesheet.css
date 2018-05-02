@@ -14,28 +14,27 @@ body {
 }
 
 main {
-  position: fixed;
-  top: 100px; /* Set this to the height of the header + the height you want the header to be */
-  bottom: 70px; /* Set this to the height of the footer */
-  left: 250px;
-  right: 0px;
-  overflow: auto;
-  background: white;
+		position: fixed;
+		top: 100px; /* Set this to the height of the header + the height you want the header to be */
+		bottom: 70px; /* Set this to the height of the footer */
+		left: 250px;
+		right: 0px;
+		overflow: auto;
+		background: transparent;
 	}
 
 	#header {
 		color: white;
-		height: 100px;
-		background-color:  #641e16;
+		height: 150px;
+		background-color: #641e16;
 		position: absolute;
-		top: 0px;
-		left: 0px;
-		width: 100%;
+		top: 0;
+		left: 0;
+		right: 250px;
 		overflow: hidden;
-		padding: 15px;
 	}
 
-  #left {
+	#left {
 		position: absolute;
 		background: transparent;
 		color: white;
@@ -46,22 +45,33 @@ main {
 		overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
 	}
 
-  #mainbody {
+	#right {
+		position: absolute;
+		background: blue;
+		color: white;
+		top: 100px; /* Set this to the height of the header */
+		bottom: 70px; /* Set this to the height of the footer */
+		right: 0;
+		width: 250px;
+		overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+	}
+
+	#mainbody {
 		position: fixed;
-		top: 200px; /* Set this to the height of the header + the height you want the header to be */
+		top: 250px; /* Set this to the height of the header + the height you want the header to be */
 		bottom: 70px; /* Set this to the height of the footer */
 		left: 250px;
-		right: 0px;
+		right: 250px;
 		overflow: auto;
 		background: white;
 	}
 
-  #footer {
+	#footer {
 		background-color:white;
 		position: absolute;
 		bottom: 0;
 		left: 250px;
-		right: 0px;
+		right: 250px;
 		height: 70px;
 		overflow: hidden;
 	}
