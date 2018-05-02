@@ -4,16 +4,36 @@ body {
   overflow: hidden;
   height: 100%;
   max-height: 100%;
-  background-color:black;
-  background: url(../images/walnut.jpg) no-repeat center fixed; 
-  background-size: cover;
+  background-color:green;
 }
 
 main {
   position: fixed;
-  top: 100px; /* Set this to the height of the header */
+  top: 100px; /* Set this to the height of the header + the height you want the header to be */
   bottom: 70px; /* Set this to the height of the footer */
-  left: 200px;
+  left: 300px;
+  right: 0px;
+  overflow: auto;
+  background: white;
+}
+
+#header {
+  color: white;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  padding: 15px;
+}
+
+#mainbody {
+  position: fixed;
+  top: 200px; /* Set this to the height of the header + the height you want the header to be */
+  bottom: 70px; /* Set this to the height of the footer */
+  left: 300px;
   right: 0px;
   overflow: auto;
   background: white;
@@ -22,7 +42,7 @@ main {
 #footer {
   position: absolute;
   bottom: 0;
-  margin-left: 200px;
+  margin-left: 300px;
   height: 70px;
   width: 100%;
   background-color: white;
