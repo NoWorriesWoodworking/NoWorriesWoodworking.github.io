@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+  background-color:green;
+}
+
+main {
+  position: fixed;
+  top: 100px; /* Set this to the height of the header */
+  bottom: 70px; /* Set this to the height of the footer */
+  left: 200px;
+  right: 0px;
+  overflow: auto;
+  background: white;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  margin-left: 200px;
+  height: 70px;
+  width: 100%;
+  background-color: white;
+}
