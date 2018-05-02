@@ -5,7 +5,7 @@ body {
   height: 100%;
   max-height: 100%;
   background-color:green;
-  background-image: url("/images/walnut.jpg");
+  background-image: url(/images/walnut.jpg);
 }
 
 main {
