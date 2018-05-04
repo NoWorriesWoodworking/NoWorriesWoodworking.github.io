@@ -36,6 +36,7 @@ h1{
   font-size: 20px;
   transition: all 0.5s;
   cursor: pointer;
+  box-shadow: 10px 10px 10px rgba(85, 85, 85, 0.5);
 }
 
 .button span {
