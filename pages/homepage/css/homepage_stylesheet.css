@@ -8,7 +8,6 @@
   background-size: cover;
 }
 
-body {
-  height: 100%;
-  width: 100%;
+footer {
+  bottom: 0;
 }
