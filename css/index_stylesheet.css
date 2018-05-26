@@ -57,13 +57,11 @@ h1{
 
 .button:hover span {
   padding-right: 25px;
-  background-color: #555555;
 }
 
 .button:hover span:after {
   opacity: 1;
   right: 0;
-  background-color: #403838;
 }
 
 .button:active {
