@@ -4,7 +4,7 @@ body {
   background-size:cover;
   background-position:center;
   color: white;
-  background-color: black;
+  background-color: #641e16;
 }
 html {
   height: 100%;
@@ -30,7 +30,9 @@ h1{
   display: inline-block;
   border-radius: 20px;
   width: 300px;
+  background-color: #641e16;
   min-height: 50px;
+  color: white;
   font-size: 20px;
   transition: all 0.5s;
   cursor: pointer;
