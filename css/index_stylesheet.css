@@ -30,7 +30,7 @@ h1{
   display: inline-block;
   border-radius: 20px;
   width: 300px;
-  background-color: #641e16;
+  background-color: #403838;
   min-height: 50px;
   color: white;
   font-size: 20px;
@@ -57,11 +57,13 @@ h1{
 
 .button:hover span {
   padding-right: 25px;
+  background-color: #555555;
 }
 
 .button:hover span:after {
   opacity: 1;
   right: 0;
+  background-color: #403838;
 }
 
 .button:active {
