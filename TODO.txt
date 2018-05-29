@@ -1,0 +1,2 @@
+1. Add disabled links to about, services, home when a user is on that specific pages
+2. 
